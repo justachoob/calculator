@@ -2,11 +2,14 @@
 
   <head>
     <title>my page</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
   </head>
 
   <body>
-    <p> Test 1 </p>
-    <p> Test 2 </p>
+    <script src="./script.js" type="text/javascript"></script>
+    <p class="first"> First pargraph in red </p>
+    <p id="second"> Second paragraph in blue with 20 padding </p>
+    <p onmouseover="makeborder(this)" onmouseout="noborder(this)"> Third paragraph uses JS to draw border depedning on user event </p>
   </body>
 
 </html>
