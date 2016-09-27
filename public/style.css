@@ -1,4 +1,116 @@
 
-p{color:red;}
 
-p#p2{background-color: blue;}
+h1 {
+  font-weight: lighter;
+  font-size: 2em;
+    line-height: 1.1em;
+    font-family: Cambria;
+    font-weight: normal;
+}
+
+h2 {
+  color: #cc0000;
+}
+
+body {
+  font: normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
+  background: #a6192e url(//www.sfu.ca/etc/designs/clf/clientlibs/clf/source/assets/textured-red-01-small.png) top left repeat;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-top: 25px;
+}
+div.grey_box {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+  background-color: #333333;
+  padding-bottom: 35px;
+  padding-top: 25px;
+}
+
+div.white_box {
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  background-color: white;
+}
+
+div.main_body {
+  width: 1325px;
+  background-color: #d9ebf0;
+  padding: 15px;
+  padding-bottom: 55px;
+  border-radius: 3px;
+  border: 2px solid #e0ebeb;
+}
+
+th {
+  background-color: #e6e6e6;
+  text-align: left;
+}
+
+table, tr, td, th {
+  table-layout: fixed;
+  height: 30px;
+  width: 250px;
+  padding: 5px;
+  border: 2px solid;
+  border-color: #cccccc;
+  border-collapse: collapse;
+}
+
+td.per {
+  text-align: center;
+}
+
+input {
+  padding: 7px;
+  font-size: 11px;
+}
+
+input.num {
+  text-align: right;
+  width: 83px;
+}
+
+input.den {
+  width: 83px;
+}
+
+input.numerator {
+  text-align: right;
+}
+
+input.activity, input.sname, input.weight {
+  display: table-cell;
+  width: 93%;
+}
+
+button {
+  color: white;
+  background-color: #800000;
+  border-style: hidden;
+  border-radius: 3px;
+  font-size: 13px;
+  text-align: center;
+  height: 30px;
+  width: 84px;
+  margin: 7px;
+}
+
+span.bottom_right {
+  float: right;
+}
+
+span.bottom_left {
+  float: left;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
