@@ -15,8 +15,8 @@ h2 {
 body {
   font: normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
   background: #a6192e url(//www.sfu.ca/etc/designs/clf/clientlibs/clf/source/assets/textured-red-01-small.png) top left repeat;
-  padding-left: 55px;
-  padding-right: 55px;
+  padding-left: 155px;
+  padding-right: 155px;
   padding-top: 25px;
 }
 
@@ -32,13 +32,15 @@ div.white_box {
   padding-top: 50px;
   padding-bottom: 40px;
   padding-left: 30px;
+  padding-right: 300px;
   background-color: white;
 }
 
 div.main_body {
-  width: 1325px;
+  
   background-color: #d9ebf0;
   padding: 15px;
+  padding-right: 30px;
   padding-bottom: 55px;
   border-radius: 3px;
   border: 2px solid #e0ebeb;
@@ -52,7 +54,7 @@ th {
 table, tr, td, th {
   table-layout: fixed;
   height: 30px;
-  width: 250px;
+  width: 200px;
   padding: 5px;
   border: 2px solid;
   border-color: #cccccc;
@@ -81,9 +83,13 @@ input.numerator {
   text-align: right;
 }
 
-input.activity, input.sname, input.weight {
+input.weight {
+   width: 83px;
+}
+
+input.activity, input.sname {
   display: table-cell;
-  width: 93%;
+  width: 60%;
 }
 
 button {

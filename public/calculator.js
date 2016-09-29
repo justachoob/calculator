@@ -78,23 +78,86 @@ function weight()
 
 function mean()
 {
-  
+  //var totalWeight = 0;
+  var subtotal = 0;
+  var meanTotal = 0;
+  var meanCount = 0;
+  for (var i = 1; i<count; i++)
+  {
+    // take the numerators/denom per row
+    // calculate the percentage
+    var numer = document.getElementById("a"+i+"_num").value;
+    var denom = document.getElementById("a"+i+"_denom").value;
+    var percent = numer / denom;
+    var weight = document.getElementById("weighta"+i).value;
+    if( isNaN(percent)  || percent < 0 || isFinite(percent) == false ) 
+    { 
+      //doesn't calculate unless both numerator and denom are stated
+      //document.getElementById("percentage"+i).innerHTML = "";
+      //continue;
+      //perhaps i should use alert("error message?")
+      alert("Inputs in Activity "+i+" have not been properly entered.")
+      continue;
+    }
+    else
+    {
+      subtotal += parseFloat(percent)
+      meanCount++;
+    }
+    //do i need to parse float? yes
+    
+  }
+  //weightedTotal = subtotal/totalWeight;
+  meanTotal = parseFloat(subtotal)/parseFloat(meanCount);
+  document.getElementById("total_percent").innerHTML = meanTotal;
   
 }
 
 function addRow()
 {
+  //do this by text or do this by createelements?
+  var mytable = document.getElementById("main_table");
+  var newRow = mytable.insertRow(count);
+  var activity = newRow.insertCell(0);
+  var sname = newRow.insertCell(1);
+  var weight = newRow.insertCell(2);
+  var numerdenom = newRow.insertCell(3);
+  var percentage = newRow.insertCell(4);
+  activity.innerHTML = '<input class="activity" type="text" value="Activity ' +count+ '" placeholder="Activity '+count+'">';
+  sname.innerHTML = '<input class="sname" type="text" value="A' +count+ '" placeholder="A' +count+ '">';
+  weight.innerHTML = '<input id="weighta' +count+ '" class="weight" type="number" value="" placeholder="">';
+  numerdenom.innerHTML = '<input id="a' +count+ '_num" class="num" type="number" onkeydown="calculate()" onkeyup="calculate()"> / <input id="a' +count+ '_denom" type="number" class="den" onkeydown="calculate()" onkeyup="calculate()">';
+  percentage.id = "percentage" +count;
+  percentage.className = "percent";
+
   
+  //update my count
+  count++;
 }
 
 function removeRow()
 {
+  if (count == 2)
+  {
+    alert("Please keep in mind that you must have at least one activity!")
+    return;
+  }
   
+  var mytable = document.getElementById("main_table");
+  mytable.deleteRow(count - 1);
+  count--;
 }
 
 function resetButton()
 {
   //resets the form
-  //resets the additional activies
-  
+  document.getElementById("main_form").reset();
+  //reset the percentages and Result for mean or weighted calculations
+  var c = document.getElementsByClassName("percent");
+  for (var b = 0; b<c.length; b++)
+  {
+    c[b].innerHTML = "" ;
+  }
+  //resets the form
+  //should it reset the form?
 }
