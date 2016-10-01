@@ -54,13 +54,13 @@ function weight()
     var denom = document.getElementById("a"+i+"_denom").value;
     var percent = numer / denom;
     var weight = document.getElementById("weighta"+i).value;
-    if( isNaN(percent)  || percent < 0 || isFinite(percent) == false || weight < 0 || weight > 100) 
+    if( isNaN(percent)  || percent < 0 || isFinite(percent) == false || weight < 0 || weight > 100 || weight==null) 
     { 
       //doesn't calculate unless both numerator and denom are stated
       //document.getElementById("percentage"+i).innerHTML = "";
       //continue;
       //perhaps i should use alert("error message?")
-      alert("Inputs in Activity "+i+" have not been properly entered.")
+      alert("Inputs in Activity "+i+" have not been properly entered. If no weight is entered a NaN will appear.")
       continue;
     }
     totalWeight += parseFloat(weight);
@@ -73,7 +73,8 @@ function weight()
     
   }
   weightedTotal = subtotal/totalWeight;
-  document.getElementById("total_percent").innerHTML = weightedTotal;
+  var wmultiple = parseFloat(weightedTotal)*100.;
+  document.getElementById("total_percent").innerHTML = weightedTotal+" -> "+wmultiple.toFixed(2)+"/"+"100";
 }
 
 function mean()
@@ -109,7 +110,9 @@ function mean()
   }
   //weightedTotal = subtotal/totalWeight;
   meanTotal = parseFloat(subtotal)/parseFloat(meanCount);
-  document.getElementById("total_percent").innerHTML = meanTotal;
+  var multiple = parseFloat(meanTotal)*100;
+  
+  document.getElementById("total_percent").innerHTML = meanTotal+" -> "+multiple.toFixed(2)+"/"+"100";
   
 }
 
